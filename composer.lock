@@ -1,0 +1,176 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "dafc57361bf27b2e4f4ee245522ca9c3",
+    "packages": [
+        {
+            "name": "elmijo/php-cliente-addr",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ElMijo/php-cliente-addr.git",
+                "reference": "ca762b5eb351799927699db3fecc7f98a9ac5d22"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ElMijo/php-cliente-addr/zipball/ca762b5eb351799927699db3fecc7f98a9ac5d22",
+                "reference": "ca762b5eb351799927699db3fecc7f98a9ac5d22",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.1.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jerry Anselmi",
+                    "email": "jerry.anselimi@gmail.com",
+                    "homepage": "http://elmijo.net.ve",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Una pequeña clase para obtener la IP y el HostName del cliente",
+            "homepage": "https://github.com/ElMijo/php-cliente-addr",
+            "keywords": [
+                "HTTP_CLIENT_IP",
+                "HTTP_FORWARDED",
+                "HTTP_FORWARDED_FOR",
+                "HTTP_X_CLUSTER_CLIENT_IP",
+                "HTTP_X_FORWARDED",
+                "HTTP_X_FORWARDED_FOR",
+                "IP",
+                "REMOTE_ADDR",
+                "addr",
+                "cliente",
+                "hostname"
+            ],
+            "time": "2014-08-22 02:27:50"
+        },
+        {
+            "name": "elmijo/php-error-log",
+            "version": "1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ElMijo/php-error-log.git",
+                "reference": "6a83640f8a7487159befe5888e92ae1429c790ab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ElMijo/php-error-log/zipball/6a83640f8a7487159befe5888e92ae1429c790ab",
+                "reference": "6a83640f8a7487159befe5888e92ae1429c790ab",
+                "shasum": ""
+            },
+            "require": {
+                "elmijo/php-cliente-addr": "dev-master",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jerry Anselmi",
+                    "email": "jerry.anselimi@gmail.com",
+                    "homepage": "http://elmijo.net.ve",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Una pequeña libreria para manejar los logs de tu aplicación de forma simple.. rapida.. y directa!!",
+            "homepage": "https://github.com/ElMijo/php-error-log",
+            "keywords": [
+                "error",
+                "error_log",
+                "log",
+                "logging",
+                "php"
+            ],
+            "time": "2014-08-22 03:14:20"
+        },
+        {
+            "name": "symfony/css-selector",
+            "version": "v2.6.7",
+            "target-dir": "Symfony/Component/CssSelector",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/CssSelector.git",
+                "reference": "189cf0f7f56d7c4be3b778df15a7f16a29f3680d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/CssSelector/zipball/189cf0f7f56d7c4be3b778df15a7f16a29f3680d",
+                "reference": "189cf0f7f56d7c4be3b778df15a7f16a29f3680d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "~2.7"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\CssSelector\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jean-François Simon",
+                    "email": "jeanfrancois.simon@sensiolabs.com"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony CssSelector Component",
+            "homepage": "https://symfony.com",
+            "time": "2015-05-02 15:18:45"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "elmijo/php-cliente-addr": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
