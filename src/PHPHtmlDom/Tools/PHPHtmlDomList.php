@@ -5,15 +5,18 @@ use PHPHtmlDom\Tools\PHPHtmlDomElement;
 /**
 * Clase permite obtener un contenido que pude venir de una url o una archivo
 */
-class PHPHtmlDomList/* extends \PHPErrorLog\PHPErrorLog*/
+class PHPHtmlDomList
 {
-    private $node_list = array();
-
     public function __construct (\DOMNodeList $node_list)
     {
+        $this->elements = array();
+
         foreach($node_list as $node)
         {
-            $this->node_list[] = new PHPHtmlDomElement($node);
+            if($node->nodeType == 1)
+            {
+                $this->elements[] = new PHPHtmlDomElement($node);
+            }            
         }
     }
 

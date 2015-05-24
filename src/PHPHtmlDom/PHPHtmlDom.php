@@ -94,13 +94,5 @@ class PHPHtmlDom
 
         return $xpath;
     }
-
-
-        // \Symfony\Component\CssSelector\Exception\SyntaxErrorException
-        // $this->selector->toXPath(' #containerMenu li')
-
-        // use Symfony\Component\CssSelector\CssSelector;
-
-
 }
 ?>
