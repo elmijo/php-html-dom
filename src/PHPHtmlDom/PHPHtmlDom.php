@@ -1,6 +1,7 @@
 <?php
 namespace PHPHtmlDom;
 
+use PHPHtmlDom\Tools\PHPHtmlDomList;
 /**
 * Clase principal
 */
@@ -56,7 +57,7 @@ class PHPHtmlDom
 
         if(!!$xpath)
         {
-            return $this->xpath->query($xpath);
+            return new PHPHtmlDomList($this->xpath->query($xpath));
         }
         // $xpath->query()
     }
