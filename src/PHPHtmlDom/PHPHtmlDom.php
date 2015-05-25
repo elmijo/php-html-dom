@@ -59,7 +59,6 @@ class PHPHtmlDom
         {
             return new PHPHtmlDomList($this->xpath->query($xpath));
         }
-        // $xpath->query()
     }
 
     private function domImport()

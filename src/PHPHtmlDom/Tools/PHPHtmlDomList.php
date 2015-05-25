@@ -13,7 +13,7 @@ class PHPHtmlDomList
 
         foreach($node_list as $node)
         {
-            if($node->nodeType == 1)
+            if($node->nodeType == 1&&!in_array($node->tagName, ['br','hr']))
             {
                 $this->elements[] = new PHPHtmlDomElement($node);
             }            
