@@ -10,11 +10,11 @@ $not_element_content = array('area','base','br','col','command','embed','hr','im
 */
 class PHPHtmlDomElement
 {
-    private $current_element;
+    private $dom_element;
 
     public function __construct (\DOMElement $element)
     {
-        $this->current_element = $element;
+        $this->dom_element = $element;
 
         $this->tagName = $element->tagName;
 
@@ -36,11 +36,21 @@ class PHPHtmlDomElement
         return !!isset($this->attrs->{$attr});
     }
 
+    final public function attr($inx)
+    {
+        !!$this->hasattr($inx)?$this->attrs->{$inx}:NULL;
+    }
+    
+    final public function data($inx)
+    {
+        return $this->attr(sprintf('data-%s',$inx));
+    }
+
     private function getAllAttrs()
     {
         $this->attrs = new \stdClass;
 
-        foreach($this->current_element->attributes as $name => $node)
+        foreach($this->dom_element->attributes as $name => $node)
         {
             $this->attrs->{strtolower($name)} = $node->nodeValue;
         }
@@ -49,7 +59,7 @@ class PHPHtmlDomElement
 
     private function getAllChilds()
     {
-       $this->childs = new PHPHtmlDomList($this->current_element->childNodes);
+       $this->childs = new PHPHtmlDomList($this->dom_element->childNodes);
 
        return $this;
     }
@@ -58,7 +68,7 @@ class PHPHtmlDomElement
     {
         $text_formatting = array('b','strong','em','i','small','strong','sub','sup','ins','del','mark','br','hr');
 
-        foreach ($this->current_element->childNodes as $node)
+        foreach ($this->dom_element->childNodes as $node)
         {
             if($node->nodeType == 3)
             {
@@ -109,6 +119,17 @@ class PHPHtmlDomElement
         return $this;       
     }
 
+    private function attrsToString($attrs)
+    {
+        $attrs_string ='';
+
+        foreach($attrs as $name => $node)
+        {
+            $attrs_string.= sprintf(' %s="%s"',$name,$node->nodeValue);
+        }
+
+        return $attrs_string;
+    }
     // private function getTextFormating()
     // {
     //     foreach ($this->current_element->childNodes as $node)
@@ -136,18 +157,6 @@ class PHPHtmlDomElement
 
     //     return $this;
     // }
-
-    private function attrsToString($attrs)
-    {
-        $attrs_string ='';
-
-        foreach($attrs as $name => $node)
-        {
-            $attrs_string.= sprintf(' %s="%s"',$name,$node->nodeValue);
-        }
-
-        return $attrs_string;
-    }
 }
 
 ?>
