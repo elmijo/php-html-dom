@@ -74,7 +74,7 @@ class PHPHtmlDomTest extends PHPUnit_Framework_TestCase
 
         $this->assertInstanceOf('PHPTools\PHPHtmlDom\Core\PHPHtmlDomList', $find);
 
-        $this->assertGreaterThan(0, $domlist->count());
+        $this->assertGreaterThanOrEqual(0, $domlist->count());
 
         $this->assertInstanceOf('PHPTools\PHPHtmlDom\Core\PHPHtmlDomElement', $element);
 
