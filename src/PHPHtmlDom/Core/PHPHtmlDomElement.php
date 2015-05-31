@@ -1,8 +1,8 @@
 <?php
-namespace PHPHtmlDom\Core;
+namespace PHPTools\PHPHtmlDom\Core;
 
-use PHPHtmlDom\Core\PHPHtmlDomList;
-use PHPHtmlDom\Core\PHPHtmlDomElementAbstract;
+use PHPTools\PHPHtmlDom\Core\PHPHtmlDomList;
+use PHPTools\PHPHtmlDom\Core\PHPHtmlDomElementAbstract;
 
 $not_element_content = array('area','base','br','col','command','embed','hr','img','input','link','meta','param','source');
 

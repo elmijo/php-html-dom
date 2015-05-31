@@ -1,8 +1,8 @@
 <?php
-namespace PHPHtmlDom\Core;
+namespace PHPTools\PHPHtmlDom\Core;
 
-use PHPHtmlDom\Core\PHPHtmlDomElement;
-use PHPHtmlDom\Core\PHPHtmlDomListAbstract;
+use PHPTools\PHPHtmlDom\Core\PHPHtmlDomElement;
+use PHPTools\PHPHtmlDom\Core\PHPHtmlDomListAbstract;
 /**
 * Clase permite obtener un contenido que pude venir de una url o una archivo
 */

@@ -1,7 +1,7 @@
 <?php
-namespace PHPHtmlDom\Core;
+namespace PHPTools\PHPHtmlDom\Core;
 
-use PHPHtmlDom\Core\PHPHtmlDomElement;
+use PHPTools\PHPHtmlDom\Core\PHPHtmlDomElement;
 /**
 * Clase permite obtener un contenido que pude venir de una url o una archivo
 */
@@ -11,7 +11,7 @@ abstract class PHPHtmlDomListAbstract
     {
         $find = NULL;
 
-        $doc = new \PHPHtmlDom\PHPHtmlDom;
+        $doc = new \PHPTools\PHPHtmlDom\PHPHtmlDom;
 
         if(!!$doc->importHTML($this->list_html))
         {

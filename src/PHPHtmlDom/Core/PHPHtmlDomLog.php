@@ -1,5 +1,5 @@
 <?php
-namespace PHPHtmlDom\Core;
+namespace PHPTools\PHPHtmlDom\Core;
 
 /**
 * Clase permite obtener un contenido que pude venir de una url o una archivo
