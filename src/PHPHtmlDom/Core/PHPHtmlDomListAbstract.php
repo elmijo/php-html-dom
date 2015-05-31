@@ -34,6 +34,11 @@ abstract class PHPHtmlDomListAbstract
     {
         return isset($this->elements[$inx])?$this->elements[$inx]:NULL;
     }
+
+    final public function count()
+    {
+        return count($this->elements);
+    }
 }
 
 ?>

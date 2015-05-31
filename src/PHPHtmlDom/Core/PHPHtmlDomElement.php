@@ -11,7 +11,7 @@ $not_element_content = array('area','base','br','col','command','embed','hr','im
 */
 class PHPHtmlDomElement extends PHPHtmlDomElementAbstract
 {
-    private $dom_element;
+    protected $dom_element;
 
     public function __construct (\DOMElement $element)
     {

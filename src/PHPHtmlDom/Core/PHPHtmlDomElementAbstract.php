@@ -6,6 +6,11 @@ namespace PHPTools\PHPHtmlDom\Core;
 */
 abstract class PHPHtmlDomElementAbstract
 {
+    final public function hasclass($classname)
+    {
+        return !!$this->hasattr('class')?in_array($classname, explode(' ', $this->attrs->class)):FALSE;
+    }
+
     final public function hasattr($attr)
     {
         return !!isset($this->attrs->{$attr});
