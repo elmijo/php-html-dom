@@ -1,0 +1,97 @@
+<pre><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>CineCity La Victoria - Cartelera</title>
+<!-- CSS -->
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<!-- JAVASCRIPT -->
+<script type="text/javascript" src="js/jquery-1.5.2.min.js"></script>
+<script type="text/javascript"> 
+function CambiarFecha(fecha){
+	window.location.href="cartelera.php?d="+fecha;
+}
+</script>
+</head>
+
+<body>
+
+<div id="main-container">
+	<div id="brillo"></div>
+<div id="head">
+    <div id="bglogo">
+        <h1 id="logo-cinecity"><img src="images/logo-cinecity.png" alt="CineCity" title="CineCity" /></h1>            
+        <p>CENTRO COMERCIAL MORICHAL, LOCAL CINE<br />
+            LA VICTORIA. EDO ARAGUA - VENEZUELA<br />
+            <br />
+         </p>
+         <h1 id="siguenos">SIGUENOS...</h1>
+         <span class="redesSociales">
+         <a href="http://www.facebook.com/pages/CineCity-La-Victoria/89938307722" target="_blank"><img src="images/ico-facebook.png" border="0" alt="Seguir a CineCity La Victoria en Facebook"/></a>
+         <a href="http://www.twitter.com/cinecitylv" target="_blank"><img src="images/t_small-a.png" border="0" alt="Seguir a CineCity La Victoria en Twitter"/></a></span>
+         <h1 id="logo-slogan">Tu Lugar de Diversión...</h1>
+     </div>
+</div>    <div id="contenido" class="brillo">
+    	<div id="menu">
+	<div id="containerMenu">
+		<ul>
+   		 	<li><a href="/web">Home</a></li>
+            <li class="separador">|</li>
+        	<li><a href="/web/cartelera.php">Cartelera</a></li>
+            <li class="separador">|</li>
+            <li><a href="/web/proximos.php">Proximos Estr&eacute;nos</a></li>
+            <li class="separador">|</li>
+            <li><a href="/web/promociones.php">Promociones</a></li>
+            <li class="separador">|</li>
+            <li><a href="/web/nosotros.php">CineCity</a></li>
+            <li class="separador">|</li>
+            <li><a href="/web/contacto.php">Contactenos</a></li>
+            <li class="separador">|</li>
+		</ul>
+	</div>
+</div><div id="cartelera2">
+	<div class="tituloCartelera">Cartelera de la semana</div>
+    <div id="pelicula">
+        <div id="peliculaContenido" style="width:0; left:50%; margin-left:-0px;">
+        	       </div>
+    </div>
+    </div>
+</div>        
+        <div id="horarios">
+        <div>Fecha:
+            <div>
+            <select id="fecha" name="fecha" onchange="CambiarFecha(this.value);">
+             
+            </select>
+        	</div>
+        </div>
+        <table width="700px" cellpadding="0" cellspacing="1" border="0" align="center">
+        	<tr>
+            	<td align="center" class="th" width="50px">Sala</td>
+                <td align="center" class="th">Pel&iacute;cula</td>
+                <td align="center" class="th">Funciones</td>
+            </tr>
+            
+        <tr><td colspan='5' class='fecha_no_disponible' valign='middle' align='center'>No Existen Funciones Programadas para la Fecha Indicada</td></tr>        </table>
+        </div>
+    </div>
+	<div id="footer">
+    	
+    </div>
+</div>
+<script type="text/javascript">
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-24611841-1']);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+ 
+</script>
+</body>
+</html>

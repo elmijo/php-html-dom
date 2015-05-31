@@ -19,5 +19,8 @@
             "PHPTools\\PHPHtmlDom\\":"src/PHPHtmlDom/"
         }
     },
+    "require-dev": {
+        "phpunit/phpunit": "4.6.*"
+    },
     "minimum-stability": "stable"
 }
