@@ -1,34 +1,12 @@
 <?php
-namespace PHPHtmlDom\Tools;
+namespace PHPHtmlDom\Core;
 
-use PHPHtmlDom\Tools\PHPHtmlDomElement;
+use PHPHtmlDom\Core\PHPHtmlDomElement;
 /**
 * Clase permite obtener un contenido que pude venir de una url o una archivo
 */
-class PHPHtmlDomList
+abstract class PHPHtmlDomListAbstract
 {
-    private $list_html;
-
-    private $elements = array();
-
-    public function __construct (\DOMNodeList $node_list)
-    {
-        
-        $d = new \DOMDocument();
-
-        foreach($node_list as $node)
-        {
-            if($node->nodeType == 1&&!in_array($node->tagName, ['br','hr']))
-            {
-                $this->elements[] = new PHPHtmlDomElement($node);
-
-                $d->appendChild($d->importNode($node->cloneNode(TRUE),TRUE));
-            }            
-        }
-
-        $this->list_html = trim($d->saveHTML());
-    }
-
     final public function find($css_selector)
     {
         $find = NULL;

@@ -1,7 +1,7 @@
 <?php
 namespace PHPHtmlDom;
 
-use PHPHtmlDom\Tools\PHPHtmlDomList;
+use PHPHtmlDom\Core\PHPHtmlDomList;
 /**
 * Clase principal
 */
@@ -22,9 +22,9 @@ class PHPHtmlDom
     function __construct()
     {
         $this->selector = new \Symfony\Component\CssSelector\CssSelector;
-        $this->logger = new \PHPHtmlDom\Tools\PHPHtmlDomLog;
+        $this->logger = new \PHPHtmlDom\Core\PHPHtmlDomLog;
         $this->dom = new \DOMDocument;
-        $this->importer = new \PHPHtmlDom\Tools\PHPHtmlDomImportHtml;
+        $this->importer = new \PHPHtmlDom\Core\PHPHtmlDomImportHtml;
         $this->html_content = NULL;
 
         $this->dom->preserveWhiteSpace = false;

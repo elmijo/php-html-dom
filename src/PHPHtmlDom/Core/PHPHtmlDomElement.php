@@ -1,14 +1,15 @@
 <?php
-namespace PHPHtmlDom\Tools;
+namespace PHPHtmlDom\Core;
 
-use PHPHtmlDom\Tools\PHPHtmlDomList;
+use PHPHtmlDom\Core\PHPHtmlDomList;
+use PHPHtmlDom\Core\PHPHtmlDomElementAbstract;
 
 $not_element_content = array('area','base','br','col','command','embed','hr','img','input','link','meta','param','source');
 
 /**
 * Clase permite obtener un contenido que pude venir de una url o una archivo
 */
-class PHPHtmlDomElement
+class PHPHtmlDomElement extends PHPHtmlDomElementAbstract
 {
     private $dom_element;
 
@@ -23,30 +24,13 @@ class PHPHtmlDomElement
         $this->textFormatting = '';
 
         $this
-            ->getAllAttrs()
-            ->getAllChilds()
-            ->getAllText()
+            ->get_attrs()
+            ->get_childs()
+            ->get_Text()
         ;
-
-        // var_dump($element->ownerDocument);
     }
 
-    final public function hasattr($attr)
-    {
-        return !!isset($this->attrs->{$attr});
-    }
-
-    final public function attr($inx)
-    {
-        !!$this->hasattr($inx)?$this->attrs->{$inx}:NULL;
-    }
-    
-    final public function data($inx)
-    {
-        return $this->attr(sprintf('data-%s',$inx));
-    }
-
-    private function getAllAttrs()
+    private function get_attrs()
     {
         $this->attrs = new \stdClass;
 
@@ -57,14 +41,14 @@ class PHPHtmlDomElement
         return $this;
     }
 
-    private function getAllChilds()
+    private function get_childs()
     {
        $this->childs = new PHPHtmlDomList($this->dom_element->childNodes);
 
        return $this;
     }
 
-    private function getAllText()
+    private function get_Text()
     {
         $text_formatting = array('b','strong','em','i','small','strong','sub','sup','ins','del','mark','br','hr');
 
@@ -72,7 +56,7 @@ class PHPHtmlDomElement
         {
             if($node->nodeType == 3)
             {
-                $this->setText(trim($node->textContent));
+                $this->set_text(trim($node->textContent));
                 $this->textFormatting.=$node->textContent;
             }
             else if($node->nodeType == 1 && !!in_array($node->tagName, $text_formatting))
@@ -84,7 +68,7 @@ class PHPHtmlDomElement
                 else
                 {
                     $tag = $node->tagName;
-                    $attrs = $this->attrsToString($node->attributes);
+                    $attrs = $this->attrs_to_string($node->attributes);
                     $text = $node->textContent;
 
                     $this->textFormatting.= sprintf('<%1$s%2$s>%3$s</%1$s>',$tag,$attrs,$text);
@@ -95,7 +79,7 @@ class PHPHtmlDomElement
         return $this;
     }
 
-    private function setText($text)
+    private function set_text($text)
     {
         if(!!$text)
         {
@@ -119,7 +103,7 @@ class PHPHtmlDomElement
         return $this;       
     }
 
-    private function attrsToString($attrs)
+    private function attrs_to_string($attrs)
     {
         $attrs_string ='';
 
@@ -130,33 +114,5 @@ class PHPHtmlDomElement
 
         return $attrs_string;
     }
-    // private function getTextFormating()
-    // {
-    //     foreach ($this->current_element->childNodes as $node)
-    //     {
-    //         if($node->nodeType == 3)
-    //         {
-    //             $this->textFormatting.=$node->textContent;
-    //         }
-    //         else if($node->nodeType == 1 && !!in_array($node->tagName, $text_formatting))
-    //         {
-    //             if(!!in_array($node->tagName, ['br','hr']))
-    //             {
-    //                 $this->textFormatting.= sprintf('<%s>',$node->tagName);
-    //             }
-    //             else
-    //             {
-    //                 $tag = $node->tagName;
-    //                 $attrs = $this->attrsToString($node->attributes);
-    //                 $text = $node->textContent;
-
-    //                 $this->textFormatting.= sprintf('<%1$s%2$s>%3$s</%1$s>',$tag,$attrs,$text);
-    //             }
-    //         }
-    //     }
-
-    //     return $this;
-    // }
 }
-
 ?>
