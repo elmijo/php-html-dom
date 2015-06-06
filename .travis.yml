@@ -8,4 +8,8 @@ php:
   - hhvm
   - nightly
 before_script: composer install
-script:  phpunit tests/
+script:
+  - mkdir -p build/logs
+  - phpunit tests/
+after_script:
+ - php vendor/bin/coveralls -v
