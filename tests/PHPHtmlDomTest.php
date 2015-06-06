@@ -1,9 +1,5 @@
 <?php
 
-require 'vendor/autoload.php';
-/**
-* 
-*/
 class PHPHtmlDomTest extends PHPUnit_Framework_TestCase
 {
     public $url = 'http://php.net/';
