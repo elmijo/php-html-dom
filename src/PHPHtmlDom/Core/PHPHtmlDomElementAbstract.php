@@ -18,7 +18,7 @@ abstract class PHPHtmlDomElementAbstract
 
     final public function attr($inx)
     {
-        !!$this->hasattr($inx)?$this->attrs->{$inx}:NULL;
+        return !!$this->hasattr($inx)?$this->attrs->{$inx}:NULL;
     }
 
     final public function data($inx)
