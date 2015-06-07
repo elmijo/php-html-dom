@@ -38,7 +38,7 @@ class PHPHtmlDomElement extends \PHPTools\PHPHtmlDom\Core\PHPHtmlDomElementAbstr
 
     /**
      * Objeto que contiene los elementtos hijos.
-     * @var PHPTools\PHPHtmlDom\Core\PHPHtmlDomList
+     * @var \PHPTools\PHPHtmlDom\Core\PHPHtmlDomList
      */
     public $childs;
 
