@@ -1,17 +1,14 @@
 <?php
 namespace PHPTools\PHPHtmlDom\Core;
 
-use PHPTools\PHPHtmlDom\Core\PHPHtmlDomList;
-use PHPTools\PHPHtmlDom\Core\PHPHtmlDomElementAbstract;
-
 /**
 * Esta clase representativa de un objeto DOMElement
 */
-class PHPHtmlDomElement extends PHPHtmlDomElementAbstract
+class PHPHtmlDomElement extends \PHPTools\PHPHtmlDom\Core\PHPHtmlDomElementAbstract
 {
     /**
      * Objeto nativo php que representa un elemento DOM.
-     * @var DOMElement
+     * @var \DOMElement
      */
     protected $dom_element;
 
@@ -35,7 +32,7 @@ class PHPHtmlDomElement extends PHPHtmlDomElementAbstract
 
     /**
      * Objeto que contiene los atributos del elemento.
-     * @var stdClass
+     * @var \stdClass
      */
     public $attrs;
 
@@ -83,7 +80,7 @@ class PHPHtmlDomElement extends PHPHtmlDomElementAbstract
      */
     private function get_childs()
     {
-       $this->childs = new PHPHtmlDomList($this->dom_element->childNodes);
+       $this->childs = new \PHPTools\PHPHtmlDom\Core\PHPHtmlDomList($this->dom_element->childNodes);
 
        return $this;
     }

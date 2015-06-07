@@ -75,5 +75,3 @@ class PHPHtmlDomLog extends \PHPErrorLog\PHPErrorLog
         return sprintf("PHPHtmlDom: %s",vsprintf($msg,$data));
     }
 }
-
-?>

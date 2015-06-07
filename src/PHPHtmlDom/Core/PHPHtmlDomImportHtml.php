@@ -18,7 +18,7 @@ class PHPHtmlDomImportHtml
      */
     private $context_options = array('http'=>array('method'=>"GET",'timout'=> 6,'ignore_errors' => true));
 
-    function __construct()
+    public function __construct()
     {
        $this->context = stream_context_create($this->context_options);
     }
@@ -49,5 +49,3 @@ class PHPHtmlDomImportHtml
         return $str != strip_tags($str);
     }
 }
-
-?>

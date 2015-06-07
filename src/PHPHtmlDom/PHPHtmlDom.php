@@ -42,7 +42,7 @@ class PHPHtmlDom
      */
     private $html_content; 
    
-    function __construct()
+    public function __construct()
     {
         $this->selector = new \Symfony\Component\CssSelector\CssSelector;
         $this->logger = new \PHPTools\PHPHtmlDom\Core\PHPHtmlDomLog;
@@ -127,7 +127,7 @@ class PHPHtmlDom
         {
             $xpath = $this->selector->toXPath($css_selector);
         }
-        catch (Exception $e)
+        catch (\Exception $e)
         {
             $this->logger->logError('E003', array($css_selector));
             $this->logger->logError('E000', array($e->getMessage()));
@@ -136,4 +136,3 @@ class PHPHtmlDom
         return $xpath;
     }
 }
-?>
