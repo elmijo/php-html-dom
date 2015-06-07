@@ -4,14 +4,46 @@ namespace PHPTools\PHPHtmlDom\Core;
 use PHPTools\PHPHtmlDom\Core\PHPHtmlDomList;
 use PHPTools\PHPHtmlDom\Core\PHPHtmlDomElementAbstract;
 
-$not_element_content = array('area','base','br','col','command','embed','hr','img','input','link','meta','param','source');
-
 /**
-* Clase permite obtener un contenido que pude venir de una url o una archivo
+* Esta clase representativa de un objeto DOMElement
 */
 class PHPHtmlDomElement extends PHPHtmlDomElementAbstract
 {
+    /**
+     * Objeto nativo php que representa un elemento DOM.
+     * @var DOMElement
+     */
     protected $dom_element;
+
+    /**
+     * Nombre de la etiqueta del elemento.
+     * @var string
+     */
+    public $tagName;
+
+    /**
+     * Texto que contiene el elemento, puede ser un arreglo de texto o una cadena d etexto simple.
+     * @var array|string
+     */
+    public $text;
+
+    /**
+     * Texto con formato que contiene el elemento, esto abarca todas las etiquetas de estilo de texto.
+     * @var string
+     */
+    public $textFormatting;
+
+    /**
+     * Objeto que contiene los atributos del elemento.
+     * @var stdClass
+     */
+    public $attrs;
+
+    /**
+     * Objeto que contiene los elementtos hijos.
+     * @var PHPTools\PHPHtmlDom\Core\PHPHtmlDomList
+     */
+    public $childs;
 
     public function __construct (\DOMElement $element)
     {
@@ -30,6 +62,10 @@ class PHPHtmlDomElement extends PHPHtmlDomElementAbstract
         ;
     }
 
+    /**
+     * Metodo que permite obtener todos atributos del elementos y convertirlos en un objeto stdClass.
+     * @return self
+     */
     private function get_attrs()
     {
         $this->attrs = new \stdClass;
@@ -41,6 +77,10 @@ class PHPHtmlDomElement extends PHPHtmlDomElementAbstract
         return $this;
     }
 
+    /**
+     * Metodo que permite obtener los elementos hijos y convertirlos en un objeto lista PHPHtmlDomList.
+     * @return self
+     */
     private function get_childs()
     {
        $this->childs = new PHPHtmlDomList($this->dom_element->childNodes);
@@ -48,6 +88,10 @@ class PHPHtmlDomElement extends PHPHtmlDomElementAbstract
        return $this;
     }
 
+    /**
+     * Metodo que permite obtener el texto que se encuentra dentro del elemento. 
+     * @return self
+     */
     private function get_Text()
     {
         $text_formatting = array('b','strong','em','i','small','strong','sub','sup','ins','del','mark','br','hr');
@@ -79,6 +123,11 @@ class PHPHtmlDomElement extends PHPHtmlDomElementAbstract
         return $this;
     }
 
+    /**
+     * Metodo que permite definir e texto del elemento.
+     * @param string  $text Cden de texto a definirse.
+     * @return self
+     */
     private function set_text($text)
     {
         if(!!$text)
@@ -103,6 +152,11 @@ class PHPHtmlDomElement extends PHPHtmlDomElementAbstract
         return $this;       
     }
 
+    /**
+     * Este metodo permite concatenar un objeto de atributos en una sola cadena. 
+     * @param  attay $attrs Arreglo de atributos.
+     * @return string
+     */
     private function attrs_to_string($attrs)
     {
         $attrs_string ='';
@@ -115,4 +169,3 @@ class PHPHtmlDomElement extends PHPHtmlDomElementAbstract
         return $attrs_string;
     }
 }
-?>

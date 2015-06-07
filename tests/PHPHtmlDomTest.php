@@ -137,6 +137,11 @@ class PHPHtmlDomTest extends PHPUnit_Framework_TestCase
 
         $this->assertGreaterThanOrEqual(0, $domlist->count());
 
+        $domlist->eq(0)->childs->find('li')->each(function($inx,$ele){
+            $this->assertTrue($ele->hasclass('item'));
+            $this->assertInternalType('string', $ele->text);
+        });
+
         $this->assertInstanceOf('PHPTools\PHPHtmlDom\Core\PHPHtmlDomElement', $element);
 
         $this->assertEquals('div', $element->tagName);
