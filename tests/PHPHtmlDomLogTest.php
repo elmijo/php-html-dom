@@ -5,7 +5,11 @@ class PHPHtmlDomLogTest extends PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $this->logger = new \PHPTools\PHPHtmlDom\Core\PHPHtmlDomLog;
-        $this->assertInstanceOf('\PHPTools\PHPHtmlDom\Core\PHPHtmlDomLog', $this->logger);        
+               
+    }
+    public function testOne()
+    {
+        $this->assertInstanceOf('\PHPTools\PHPHtmlDom\Core\PHPHtmlDomLog', $this->logger); 
     }
     // public function testLogError()
     // {
