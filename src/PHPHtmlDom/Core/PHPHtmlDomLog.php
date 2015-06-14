@@ -4,13 +4,15 @@ namespace PHPTools\PHPHtmlDom\Core;
 /**
 * Esta clase peermite escribir los logs.
 */
-class PHPHtmlDomLog extends \PHPErrorLog\PHPErrorLog
+class PHPHtmlDomLog extends \PHPTools\PHPErrorLog\PHPErrorLog
 {
     /**
      * Arreglo con los mensajes de información.
      * @var array
      */
-    protected static $info_msg = array(); 
+    protected static $info_msg = array(
+        'I000' => '%s',
+    );
 
     /**
      * Arreglo con los mensajes de error.
@@ -21,13 +23,14 @@ class PHPHtmlDomLog extends \PHPErrorLog\PHPErrorLog
         'E001' => 'El contenido (%.15s...) no parece ser un texto con formato HTML',
         'E002' => 'El contenido (%.15s...) no pudo ser convertido en un DOMDocument',
         'E003' => 'No se pudo convertir el selector (%s) en un DOMXPath',
-    ); 
+    );
 
     /**
      * Arreglo con los mensajes de advertencia.
      * @var array
      */
     protected static $warn_msg = array(
+        'W000' => '%s',
         'W001' => 'No se pudo Acceder al Contenido (%s)',
     );
 
@@ -40,7 +43,7 @@ class PHPHtmlDomLog extends \PHPErrorLog\PHPErrorLog
     final public function logError($msg_code,$data = array())
     {
         self::write(self::compileMessage(self::$error_msg[$msg_code],$data), PEL_ERROR);
-    } 
+    }
 
     /**
      * Metodo que permite escribir un log de Advertencia.

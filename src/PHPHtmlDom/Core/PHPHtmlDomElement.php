@@ -52,11 +52,9 @@ class PHPHtmlDomElement extends \PHPTools\PHPHtmlDom\Core\PHPHtmlDomElementAbstr
 
         $this->textFormatting = '';
 
-        $this
-            ->get_attrs()
-            ->get_childs()
-            ->get_Text()
-        ;
+        $this->get_attrs();
+        $this->get_childs();
+        $this->get_Text();
     }
 
     /**
@@ -114,7 +112,7 @@ class PHPHtmlDomElement extends \PHPTools\PHPHtmlDom\Core\PHPHtmlDomElementAbstr
 
                     $this->textFormatting.= sprintf('<%1$s%2$s>%3$s</%1$s>',$tag,$attrs,$text);
                 }
-            }            
+            }
         }
 
         return $this;
@@ -146,11 +144,11 @@ class PHPHtmlDomElement extends \PHPTools\PHPHtmlDom\Core\PHPHtmlDomElementAbstr
             }
         }
 
-        return $this;       
+        return $this;
     }
 
     /**
-     * Este metodo permite concatenar un objeto de atributos en una sola cadena. 
+     * Este metodo permite concatenar un objeto de atributos en una sola cadena.
      * @param  attay $attrs Arreglo de atributos.
      * @return string
      */

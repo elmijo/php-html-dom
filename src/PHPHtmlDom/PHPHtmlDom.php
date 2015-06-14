@@ -41,7 +41,7 @@ class PHPHtmlDom
      * @var string
      */
     private $html_content; 
-   
+
     public function __construct()
     {
         $this->selector = new \Symfony\Component\CssSelector\CssSelector;
@@ -108,7 +108,7 @@ class PHPHtmlDom
         }
         else
         {
-            $this->logger->logError('E002', array($this->html_content));            
+            $this->logger->logError('E002', array($this->html_content));
         }
 
         return $dom_import;

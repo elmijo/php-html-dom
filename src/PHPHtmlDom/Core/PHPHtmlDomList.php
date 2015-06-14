@@ -20,7 +20,6 @@ class PHPHtmlDomList extends \PHPTools\PHPHtmlDom\Core\PHPHtmlDomListAbstract
 
     public function __construct (\DOMNodeList $node_list)
     {
-        
         $d = new \DOMDocument();
 
         foreach($node_list as $node)
@@ -30,7 +29,7 @@ class PHPHtmlDomList extends \PHPTools\PHPHtmlDom\Core\PHPHtmlDomListAbstract
                 $this->elements[] = new \PHPTools\PHPHtmlDom\Core\PHPHtmlDomElement($node);
 
                 $d->appendChild($d->importNode($node->cloneNode(TRUE),TRUE));
-            }            
+            }
         }
 
         $this->list_html = trim($d->saveHTML());

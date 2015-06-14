@@ -48,7 +48,7 @@ abstract class PHPHtmlDomElementAbstract
 
     /**
      * Permite obtener el elemeno padre si lo posee
-     * @return PHPHtmlDomElement|DOMDocument 
+     * @return PHPHtmlDomElement|DOMDocument
      */
     final public function parent()
     {
