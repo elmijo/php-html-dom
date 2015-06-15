@@ -14,7 +14,7 @@ class PHPHtmlDomTest extends PHPUnit_Framework_TestCase
         $this->domfile = new PHPTools\PHPHtmlDom\PHPHtmlDom;
         $this->domtext = new PHPTools\PHPHtmlDom\PHPHtmlDom;
 
-        $this->assertInstanceOf('PHPTools\PHPHtmlDom\PHPHtmlDom', $this->domurl);        
+        $this->assertInstanceOf('PHPTools\PHPHtmlDom\PHPHtmlDom', $this->domurl);
         $this->assertInstanceOf('PHPTools\PHPHtmlDom\PHPHtmlDom', $this->domfile);
         $this->assertInstanceOf('PHPTools\PHPHtmlDom\PHPHtmlDom', $this->domtext);
     }
