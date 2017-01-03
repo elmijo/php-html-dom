@@ -44,7 +44,7 @@ class PHPHtmlDom
 
     public function __construct()
     {
-        $this->selector = new \Symfony\Component\CssSelector\CssSelector;
+        $this->selector = new \Symfony\Component\CssSelector\CssSelectorConverter;
         $this->logger = new \PHPTools\PHPHtmlDom\Core\PHPHtmlDomLog;
         $this->dom = new \DOMDocument;
         $this->importer = new \PHPTools\PHPHtmlDom\Core\PHPHtmlDomImportHtml;
