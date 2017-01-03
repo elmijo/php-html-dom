@@ -2,7 +2,7 @@
     "name": "elmijo/php-html-dom",
     "description": "Esta Es una Herramienta que permite convertir y manipular una cadena de texto con formato html en un objeto php.",
     "type": "library",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "require": {
         "php": ">=5.4.0",
         "symfony/css-selector": "~3.2",
